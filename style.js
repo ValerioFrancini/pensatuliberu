@@ -1,14 +1,20 @@
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:1734108558.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:2173472933.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:1349922157.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3633395730.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3368959616.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:492775450.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:391619498.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:640613752.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:3052444937.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:43056930.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:298110285.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:869544001.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:2421725028.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:
+2421725028.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:1073653048.
 
-const loginForm = document.getElementById('login-
-form');
+const loginForm = document.getElementById('login-form');
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const registrationForm = document.getElementById('registration-form'); 
@@ -33,11 +39,12 @@ if (registrationForm) { // Check if registration form exists on the current page
         localStorage.setItem('username', username
 );
         localStorage.setItem('email', email);
+
         localStorage.setItem('password', password); 
 
         console.log('User registered:', username);   
         // Redirect to main app page after login
-        window.location.href = 'index.html';
+        window.location.href = 'main-app.html';
     });
 }
 
@@ -60,3 +67,14 @@ loginForm.addEventListener('submit', (event) => {
         alert('Invalid username or password!');
     }
 });
+
+// Add this code to display the welcome message on main-app.html
+if (window.location.pathname.endsWith('main-app.html')) { 
+    const username = localStorage.getItem('username');
+    const welcomeMessageElement = document.getElementById('welcome-message');
+    if (username) {
+        welcomeMessageElement.textContent = `Benvenuto ${username}!`;
+    } else {
+        welcomeMessageElement.textContent = 'Benvenuto!'; 
+    }
+}
