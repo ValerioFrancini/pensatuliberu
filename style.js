@@ -1,3 +1,8 @@
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:312953507.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3955523356.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:1728241980.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:91996435.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:388799722.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:1734108558.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:2173472933.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:1349922157.
@@ -5,7 +10,8 @@
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:3368959616.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:492775450.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:391619498.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:640613752.
+// Suggested
+ // code may be subject to a license. Learn more: ~LicenseLog:640613752.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:3052444937.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:43056930.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:298110285.
@@ -19,7 +25,7 @@ const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const registrationForm = document.getElementById('registration-form'); 
 
-if (registrationForm) { // Check if registration form exists on the current page
+if (registrationForm) { // Check if registration
     registrationForm.addEventListener('submit',
  (event) => {
         event.preventDefault();
