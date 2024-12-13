@@ -10,11 +10,14 @@ const firebaseConfig = {
     messagingSenderId: "400150403662",
     appId: "1:400150403662:web:2ee3e68af31daa120a811f",
     measurementId: "G-VPQWGBTJBG"
-};
+  };
 
 // Inizializza Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
+// Log di debug
+console.log("Firebase initialized:", app);
 
 // Gestione Sign Up
 const signUpForm = document.getElementById("signUpForm");
@@ -28,7 +31,8 @@ signUpForm.addEventListener("submit", async (event) => {
         await createUserWithEmailAndPassword(auth, email, password);
         errorContainer.textContent = "Account creato con successo!";
     } catch (error) {
-        errorContainer.textContent = error.message;
+        console.error("Sign Up Error:", error);
+        errorContainer.textContent = `Errore: ${error.message}`;
     }
 });
 
@@ -44,7 +48,8 @@ signInForm.addEventListener("submit", async (event) => {
         await signInWithEmailAndPassword(auth, email, password);
         errorContainer.textContent = "Accesso effettuato con successo!";
     } catch (error) {
-        errorContainer.textContent = error.message;
+        console.error("Sign In Error:", error);
+        errorContainer.textContent = `Errore: ${error.message}`;
     }
 });
 
@@ -52,4 +57,10 @@ signInForm.addEventListener("submit", async (event) => {
 onAuthStateChanged(auth, (user) => {
     const welcomeMessage = document.getElementById("welcome");
     if (user) {
-        welcomeMessa
+        console.log("Utente autenticato:", user);
+        welcomeMessage.textContent = `Benvenuto, ${user.email}!`;
+    } else {
+        console.log("Nessun utente autenticato");
+        welcomeMessage.textContent = "";
+    }
+});
