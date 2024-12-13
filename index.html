@@ -7,67 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyDv0J1YBf54mLZW_Q9kVwBMRRzBLPqjesI",
-          authDomain: "pensatuliberu.firebaseapp.com",
-          projectId: "pensatuliberu",
-          storageBucket: "pensatuliberu.firebasestorage.app",
-          messagingSenderId: "400150403662",
-          appId: "1:400150403662:web:2ee3e68af31daa120a811f",
-          measurementId: "G-VPQWGBTJBG"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script>
     <div class="container">
         <h1>BebesitUUUU</h1>
 
         <div class="form-container">
-            <h2>Sign Up</h2>
-            <form id="signUpForm">
-                <div>
-                    <label for="signUpEmail">Email:</label>
-                    <input type="email" id="signUpEmail" required>
-                </div>
-                <div>
-                    <label for="signUpPassword">Password:</label>
-                    <input type="password" id="signUpPassword" required>
-                </div>
-                <div id="signUpError"></div>
-                <button type="submit">Sign Up</button>
-            </form>
-        </div>
-
-        <div class="form-container">
-            <h2>Sign In</h2>
-            <form id="signInForm">
-                <div>
-                    <label for="signInEmail">Email:</label>
-                    <input type="email" id="signInEmail" required>
-                </div>
-                <div>
-                    <label for="signInPassword">Password:</label>
-                    <input type="password" id="signInPassword" required>
-                </div>
-                <div id="signInError"></div>
-                <button type="submit">Sign In</button>
-            </form>
-        </div>
+            </div>
 
         <div id="welcome"></div>
         <div id="messageContainer"></div>
     </div>
-    <script type="module" src="importfirebase.js"></script>
+
+    <script type="module">
+        // Your Firebase configuration
+        const firebaseConfig = {
+          apiKey: "TUA_API_KEY",
+          authDomain: "TUO_PROGETTO.firebaseapp.com",
+          projectId: "TUO_PROGETTO",
+          storageBucket: "TUO_PROGETTO.appspot.com",
+          messagingSenderId: "TUO_MESSAGING_SENDER_ID",
+          appId: "TUO_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // ... your JavaScript functions for signup, signin, and other interactions ...
+    </script>
 </body>
 </html>
