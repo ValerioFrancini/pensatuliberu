@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Redirect to main app after a short delay (optional)
             setTimeout(() => {
-                window.location.href = 'main-app.html';
+                window.location.href = 'main-app.html'; 
             }, 2000); // 2 seconds delay 
         } else {
             // Display error message
