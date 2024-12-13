@@ -3,7 +3,6 @@ function checkPassword() {
     const errorMessage = document.getElementById('error-message');
 
     if (password === 'tvb') {
-        // Reindirizza alla pagina app.html
         window.location.href = 'app.html';
     } else {
         errorMessage.textContent = 'Password errata';
