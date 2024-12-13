@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "@genkit-ai/googleai": "^0.9.12",
     "firebase": "^11.1.0",
+    "genkit": "^0.9.12",
     "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4"
   }
