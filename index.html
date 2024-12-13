@@ -4,12 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEBESITUUU</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>BebesitUUUU</h1>
 
+    <h2>Sign Up</h2>
+    <form>
+        <div>
+            <label for="signUpEmail">Email:</label>
+            <input type="email" id="signUpEmail" required>
+        </div>
+        <div>
+            <label for="signUpPassword">Password:</label>
+            <input type="password" id="signUpPassword" required>
+        </div>
+        <div id="signUpError"></div> 
+        <button type="button" id="signUpButton">Sign Up</button>
+    </form>
+
+    <h2>Sign In</h2>
+    <form>
+        <div>
+            <label for="signInEmail">Email:</label>
+            <input type="email" id="signInEmail" required>
+        </div>
+        <div>
+            <label for="signInPassword">Password:</label>
+            <input type="password" id="signInPassword" required>
+        </div>
+        <div id="signInError"></div>
+        <button type="button" id="signInButton">Sign In</button>
+    </form>
+
+    <div id="welcome"></div>
 
     <script type="module">
+      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+
+      const auth = getAuth();
+
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
 
@@ -26,6 +60,46 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+</script>
+
+<script type="module">
+    // ... (your existing Firebase initialization code) ...
+
+    // Example sign-up
+    document.getElementById('signUpButton').addEventListener('click', () => {
+        const email = document.getElementById('signUpEmail').value;
+        const password = document.getElementById('signUpPassword').value;
+        const signUpError = document.getElementById('signUpError');
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                signUpError.textContent = ''; // Clear any previous errors
+                const user = userCredential.user;
+                console.log("User signed up:", user);
+            })
+            .catch((error) => {
+                signUpError.textContent = error.message;
+            });
+    });
+
+    // Example sign-in
+    document.getElementById('signInButton').addEventListener('click', () => {
+        const email = document.getElementById('signInEmail').value;
+        const password = document.getElementById('signInPassword').value;
+        const signInError = document.getElementById('signInError');
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                signInError.textContent = ''; // Clear any previous errors
+                const user = userCredential.user;
+                console.log("User signed in:", user);
+            })
+            .catch((error) => {
+                signInError.textContent = error.message;
+            });
+    });
+
+    // ... (onAuthStateChanged remains the same) ...
 </script>
 </body>
 </html>
