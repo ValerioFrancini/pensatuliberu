@@ -1,4 +1,4 @@
-/* Styles the body element */
+
 body {
     font-family: sans-serif;
     display: flex;
@@ -9,7 +9,6 @@ body {
     margin: 0;
 }
 
-/* Styles the container for the password input and button */
 .container {
     background-color: #fff;
     padding: 30px;
@@ -18,7 +17,6 @@ body {
     text-align: center;
 }
 
-/* Styles the password input field */
 input[type="password"] {
     width: 100%;
     padding: 10px;
@@ -27,17 +25,21 @@ input[type="password"] {
     border-radius: 3px;
 }
 
-/* Styles the access button */
 button {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
     border: none;
+
     border-radius: 3px;
     cursor: pointer;
 }
 
-/* Styles the access button on hover */
 button:hover {
     background-color: #45a049;
+}
+
+#error-message {
+    color: red;
+    margin-top: 10px;
 }
